@@ -2,7 +2,7 @@ name: R CMD check
 
 on:
   push:
-    branches: [master]
+    branches: [master, 'v1.6-rebase']
     paths:
       - 'R-package/**'
       - 'src/**'
@@ -15,6 +15,7 @@ on:
       - 'src/**'
       - 'include/**'
       - '.github/workflows/r-check.yml'
+  workflow_dispatch:
 
 jobs:
   r-check:
