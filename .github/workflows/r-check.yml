@@ -42,10 +42,13 @@ jobs:
             any::MASS
             any::Matrix
 
+      - uses: r-lib/actions/setup-tinytex@v2
+
       - name: Build and check
         uses: r-lib/actions/check-r-package@v2
         with:
           working-directory: R-package
           args: 'c("--as-cran", "--no-manual")'
+          build_args: '"--no-build-vignettes"'
           error-on: '"error"'
           check-dir: '"check"'
